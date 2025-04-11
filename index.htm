@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Ascent - Official Website</title>
+    <!-- PayPal SDK Script -->
+    <script 
+      src="https://www.paypal.com/sdk/js?client-id=BAAKllKXLa6Y_T-XCHNZRxyaKK6C81RQS2uC3AlM0hlGnrU80YU_xhJ-l59c6sotXOibHRAUIcdfH21Q7A&components=hosted-buttons&enable-funding=venmo&currency=USD">
+    </script>
     <style>
         * {
             margin: 0;
@@ -167,11 +171,22 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s, transform 0.3s;
+            display: inline-block;
         }
 
         #purchase .btn:hover {
             background: #e6b800;
             transform: scale(1.05);
+        }
+
+        /* Style PayPal Button Container */
+        #purchase .paypal-btn {
+            display: inline-block;
+        }
+
+        #purchase .paypal-btn div {
+            border-radius: 5px;
+            overflow: hidden;
         }
 
         /* About Section */
@@ -254,7 +269,14 @@
         <h2>Purchase Space Ascent</h2>
         <p>Get ready to defend the galaxy! Buy now and start your ascent.</p>
         <div class="price">$19.99</div>
-        <a href="#" class="btn" onclick="alert('Purchase functionality coming soon!')">Buy Now</a>
+        <div class="paypal-btn btn">
+            <div id="paypal-container-MMFB587LWTJTN"></div>
+            <script>
+              paypal.HostedButtons({
+                hostedButtonId: "MMFB587LWTJTN",
+              }).render("#paypal-container-MMFB587LWTJTN")
+            </script>
+        </div>
     </section>
 
     <!-- About Section -->
