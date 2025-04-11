@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Ascent - Official Website</title>
-    <!-- PayPal SDK Script -->
-    <script 
-      src="https://www.paypal.com/sdk/js?client-id=BAAKllKXLa6Y_T-XCHNZRxyaKK6C81RQS2uC3AlM0hlGnrU80YU_xhJ-l59c6sotXOibHRAUIcdfH21Q7A&components=hosted-buttons&enable-funding=venmo&currency=USD">
-    </script>
     <style>
         * {
             margin: 0;
@@ -179,14 +175,57 @@
             transform: scale(1.05);
         }
 
-        /* Style PayPal Button Container */
+        /* Style PayPal Button */
         #purchase .paypal-btn {
             display: inline-block;
         }
 
-        #purchase .paypal-btn div {
+        #purchase .pp-MMFB587LWTJTN {
+            text-align: center;
+            border: none;
             border-radius: 5px;
-            overflow: hidden;
+            min-width: 186px;
+            padding: 15px 30px;
+            height: 48px;
+            font-weight: 700;
+            background-color: #ffcc00;
+            color: #0a0a23;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            line-height: 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        #purchase .pp-MMFB587LWTJTN:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+
+        /* Style PayPal Form Extras */
+        #purchase .paypal-form {
+            display: inline-grid;
+            justify-items: center;
+            align-content: start;
+            gap: 0.5rem;
+        }
+
+        #purchase .paypal-form img[alt="cards"] {
+            max-width: 100px;
+            height: auto;
+        }
+
+        #purchase .paypal-form section {
+            font-size: 12px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        #purchase .paypal-form section img {
+            height: 0.875rem;
+            vertical-align: middle;
         }
 
         /* About Section */
@@ -268,14 +307,13 @@
     <section id="purchase">
         <h2>Purchase Space Ascent</h2>
         <p>Get ready to defend the galaxy! Buy now and start your ascent.</p>
-        <div class="price">$19.99</div>
-        <div class="paypal-btn btn">
-            <div id="paypal-container-MMFB587LWTJTN"></div>
-            <script>
-              paypal.HostedButtons({
-                hostedButtonId: "MMFB587LWTJTN",
-              }).render("#paypal-container-MMFB587LWTJTN")
-            </script>
+        <div class="price">$4.99</div>
+        <div class="paypal-btn">
+            <form action="https://www.paypal.com/ncp/payment/MMFB587LWTJTN" method="post" target="_blank" class="paypal-form">
+                <input class="pp-MMFB587LWTJTN" type="submit" value="Buy Now" />
+                <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="Accepted payment methods: Debit and Credit Cards" />
+                <section>Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" /></section>
+            </form>
         </div>
     </section>
 
